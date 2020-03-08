@@ -1,0 +1,26 @@
+{
+    "name": "Chance",
+    "version": "1.0",
+    "description": "Browse Faster",
+    "permissions": ["storage",
+        "http://*/*",
+        "tabs"
+    ],
+    "content_scripts": [{
+        "matches": ["http://*/*",
+            "https://*/*"
+        ],
+        "js": ["constants.js",
+            "utility_helper.js",
+            "create_view.js",
+            "trigger_key_event.js",
+            "data_store.js"
+        ],
+        "run_at": "document_end"
+    }],
+    "background": {
+        "scripts": ["handler_background.js"],
+        "persistent": false
+    },
+    "manifest_version": 2
+}
